@@ -12,5 +12,9 @@
     "consecutive_failures": 1,
     "success_rate": 0,
     "last_error": "read-only: workspace write-locked via bwrap claude exited 1: service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],"
+  },
+  "chain:fd-hook-demo": {
+    "last_status": "failed",
+    "last_failed": "2026-08-17T13:48:48Z"
   }
 }
