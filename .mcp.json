@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "finance-district": {
+      "type": "http",
+      "url": "https://wallet-mcp.fd.xyz",
+      "headers": {
+        "Authorization": "Bearer ${MCP_FINANCE_DISTRICT_TOKEN}"
+      }
+    }
+  }
+}
