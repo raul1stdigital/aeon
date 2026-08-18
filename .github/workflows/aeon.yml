@@ -362,6 +362,9 @@ jobs:
         if: steps.work.outputs.mode != '' && env.FLEET_ENDPOINT != '' && env.FLEET_TOKEN != ''
         env:
           SKILL:     ${{ steps.skill.outputs.name }}
+          # From vars (not secrets): the value '1' as a secret makes GitHub mask
+          # every digit 1 in all run logs, corrupting displayed hashes/links.
+          HOOK_MAINNET_OK: ${{ vars.HOOK_MAINNET_OK }}
           SKILL_VAR: ${{ inputs.var }}
         run: |
           set -euo pipefail
@@ -602,6 +605,9 @@ jobs:
           BEAMR_NETWORK: ${{ vars.BEAMR_NETWORK }}
           BEAMR_MAX_PAY_USDC: ${{ vars.BEAMR_MAX_PAY_USDC }}
           JSONRENDER_ENABLED: ${{ vars.JSONRENDER_ENABLED || 'true' }}
+          # From vars (not secrets): the value '1' as a secret makes GitHub mask
+          # every digit 1 in all run logs, corrupting displayed hashes/links.
+          HOOK_MAINNET_OK: ${{ vars.HOOK_MAINNET_OK }}
           SKILL_VAR: ${{ inputs.var }}
           SKILL_NAME: ${{ steps.skill.outputs.name }}
           INPUT_MODEL: ${{ inputs.model }}
