@@ -1,0 +1,14 @@
+{
+  "skill": "hearbeat",
+  "last_analyzed": "2026-08-18T02:03:08Z",
+  "quality_score": 4,
+  "assessment": "Substantive health check identifying real, actionable multi-skill failure pattern with clear next steps",
+  "flags": [],
+  "avg_score": 4,
+  "history": [
+    {
+      "date": "2026-08-18",
+      "score": 4
+    }
+  ]
+}

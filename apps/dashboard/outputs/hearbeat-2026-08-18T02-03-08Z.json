@@ -1,0 +1,159 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "🚨 Heartbeat: fleet degraded",
+        "description": "2026-08-18"
+      },
+      "children": [
+        "overall_status",
+        "sep1",
+        "failed_section",
+        "sep2",
+        "error_signature",
+        "sep3",
+        "additional_context"
+      ]
+    },
+    "overall_status": {
+      "type": "Alert",
+      "props": {
+        "title": "Overall: 🔴 DEGRADED",
+        "type": "error"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {}
+    },
+    "failed_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "failed_heading",
+        "failed_heartbeat",
+        "failed_finance",
+        "failed_chain"
+      ]
+    },
+    "failed_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Failed Skills",
+        "level": "h2"
+      }
+    },
+    "failed_heartbeat": {
+      "type": "Alert",
+      "props": {
+        "title": "🔴 FAILED: heartbeat",
+        "message": "0/2 runs succeeded, last failure 2026-08-18 01:43 UTC, consecutive_failures=2. This is the only enabled scheduled skill in aeon.yml and it has never completed successfully yet (this is its 3rd attempt).",
+        "type": "error"
+      }
+    },
+    "failed_finance": {
+      "type": "Alert",
+      "props": {
+        "title": "🔴 FAILED: finance-district-mcp (on-demand)",
+        "message": "0/2 runs succeeded, last failure 2026-08-17 14:53 UTC, consecutive_failures=2.",
+        "type": "error"
+      }
+    },
+    "failed_chain": {
+      "type": "Alert",
+      "props": {
+        "title": "🔴 FAILED: chain:fd-hook-demo (on-demand chain)",
+        "message": "Failed 2026-08-17 15:10 UTC.",
+        "type": "error"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {}
+    },
+    "error_signature": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "error_sig_heading",
+        "error_sig_text"
+      ]
+    },
+    "error_sig_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Shared Error Signature",
+        "level": "h3"
+      }
+    },
+    "error_sig_text": {
+      "type": "Text",
+      "props": {
+        "text": "All three failures share the same error signature (claude exited 1, truncated JSON around service_tier/modelUsage) — worth checking whether this is a shared harness/runtime issue rather than three unrelated skill bugs.",
+        "variant": "body"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {}
+    },
+    "additional_context": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "context_heading",
+        "prs_item",
+        "issues_item",
+        "memory_item",
+        "docs_item"
+      ]
+    },
+    "context_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Additional Context",
+        "level": "h3"
+      }
+    },
+    "prs_item": {
+      "type": "Text",
+      "props": {
+        "text": "No stalled PRs (none open).",
+        "variant": "body"
+      }
+    },
+    "issues_item": {
+      "type": "Text",
+      "props": {
+        "text": "Issues are disabled on this repo, so urgent-issue check was skipped.",
+        "variant": "body"
+      }
+    },
+    "memory_item": {
+      "type": "Text",
+      "props": {
+        "text": "No flagged memory items beyond the unconfigured fork defaults (notification channels, first digest).",
+        "variant": "body"
+      }
+    },
+    "docs_item": {
+      "type": "Text",
+      "props": {
+        "text": "docs/status.md regenerated: 🔴 DEGRADED.",
+        "variant": "body"
+      }
+    }
+  }
+}
