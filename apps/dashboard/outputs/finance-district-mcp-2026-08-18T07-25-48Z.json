@@ -1,0 +1,282 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Finance District: ETH price + gas float sent"
+      },
+      "children": [
+        "wallet_section",
+        "sep1",
+        "market_section",
+        "sep2",
+        "transfer_section",
+        "sep3",
+        "summary_section"
+      ]
+    },
+    "wallet_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "wallet_heading",
+        "wallet_addr",
+        "balance_grid"
+      ]
+    },
+    "wallet_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Wallet",
+        "level": "h3"
+      }
+    },
+    "wallet_addr": {
+      "type": "Text",
+      "props": {
+        "text": "Agent Wallet EVM: 0x021e271ad8B4b69e6A04d7b40872ED590eA0F479"
+      }
+    },
+    "balance_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "eth_bal",
+        "usdc_bal"
+      ]
+    },
+    "eth_bal": {
+      "type": "Stat",
+      "props": {
+        "label": "Base balance (pre-tx)",
+        "value": "0.0015977 ETH"
+      }
+    },
+    "usdc_bal": {
+      "type": "Stat",
+      "props": {
+        "label": "Base balance (pre-tx)",
+        "value": "10.97 USDC"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "market_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "market_heading",
+        "price_stat",
+        "changes_heading",
+        "changes_grid",
+        "source_link",
+        "payment_text"
+      ]
+    },
+    "market_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "ETH Market Data (via CoinMarketCap x402)",
+        "level": "h3"
+      }
+    },
+    "price_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Price",
+        "value": "$1,899.49"
+      }
+    },
+    "changes_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Price Changes",
+        "level": "h4"
+      }
+    },
+    "changes_grid": {
+      "type": "Grid",
+      "props": {
+        "columns": 2,
+        "gap": "md"
+      },
+      "children": [
+        "change_1h",
+        "change_24h",
+        "change_7d",
+        "change_30d"
+      ]
+    },
+    "change_1h": {
+      "type": "Stat",
+      "props": {
+        "label": "1h",
+        "value": "+0.12%",
+        "trend": "up"
+      }
+    },
+    "change_24h": {
+      "type": "Stat",
+      "props": {
+        "label": "24h",
+        "value": "-0.18%",
+        "trend": "down"
+      }
+    },
+    "change_7d": {
+      "type": "Stat",
+      "props": {
+        "label": "7d",
+        "value": "+1.59%",
+        "trend": "up"
+      }
+    },
+    "change_30d": {
+      "type": "Stat",
+      "props": {
+        "label": "30d",
+        "value": "+1.71%",
+        "trend": "up"
+      }
+    },
+    "source_link": {
+      "type": "Link",
+      "props": {
+        "label": "Source: pro-api.coinmarketcap.com (x402 paid endpoint)",
+        "href": "https://pro-api.coinmarketcap.com/x402/v3/cryptocurrency/quotes/latest?id=1027"
+      }
+    },
+    "payment_text": {
+      "type": "Text",
+      "props": {
+        "text": "Paid: 0.01 USDC on Base (x402 payment)",
+        "variant": "caption"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "transfer_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "transfer_heading",
+        "amount_stat",
+        "recipient_text",
+        "status_badge",
+        "tx_link",
+        "gas_text"
+      ]
+    },
+    "transfer_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Transfer — Gas Float for Contract Deploy",
+        "level": "h3"
+      }
+    },
+    "amount_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Amount sent",
+        "value": "0.0004 ETH on Base"
+      }
+    },
+    "recipient_text": {
+      "type": "Text",
+      "props": {
+        "text": "To: 0xd9Af81C10FD963e82aa296E095d774DD81C6830d",
+        "variant": "body"
+      }
+    },
+    "status_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "Confirmed",
+        "variant": "default"
+      }
+    },
+    "tx_link": {
+      "type": "Link",
+      "props": {
+        "label": "Tx: 0x2e116ddc5fccf98cbd3a8d6bd0ba3dc1f2874e5072ea8628171de2a803a8886e",
+        "href": "https://basescan.org/tx/0x2e116ddc5fccf98cbd3a8d6bd0ba3dc1f2874e5072ea8628171de2a803a8886e"
+      }
+    },
+    "gas_text": {
+      "type": "Text",
+      "props": {
+        "text": "Gas used: 25,200 @ 1.0075 gwei, approx 0.0000254 ETH",
+        "variant": "caption"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "summary_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "summary_heading",
+        "task_text",
+        "spent_text",
+        "result_badge"
+      ]
+    },
+    "summary_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "finance-district-mcp",
+        "level": "h3"
+      }
+    },
+    "task_text": {
+      "type": "Text",
+      "props": {
+        "text": "Task: pay CMC x402 endpoint for ETH quote, then send 0.0004 ETH gas float on Base",
+        "variant": "body"
+      }
+    },
+    "spent_text": {
+      "type": "Text",
+      "props": {
+        "text": "Spent: 0.01 USDC (Base, x402) + 0.0004 ETH (Base, transfer) + approx 0.0000254 ETH gas",
+        "variant": "body"
+      }
+    },
+    "result_badge": {
+      "type": "Badge",
+      "props": {
+        "text": "FD_OK",
+        "variant": "default"
+      }
+    }
+  }
+}
