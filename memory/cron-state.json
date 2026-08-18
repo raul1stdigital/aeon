@@ -35,5 +35,14 @@
     "consecutive_failures": 0,
     "success_rate": 1,
     "last_quality_score": 4
+  },
+  "deploy-uni-hook": {
+    "last_status": "failed",
+    "last_failed": "2026-08-18T03:30:40Z",
+    "total_runs": 1,
+    "total_successes": 0,
+    "total_failures": 1,
+    "consecutive_failures": 1,
+    "success_rate": 0
   }
 }
