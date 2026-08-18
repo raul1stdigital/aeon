@@ -1,0 +1,171 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "deploy-uni-hook — blocked: no toolchain"
+      },
+      "children": [
+        "stack_main"
+      ]
+    },
+    "stack_main": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "alert_blocked",
+        "error_code",
+        "brief_text",
+        "sep1",
+        "heading_cause",
+        "cause_text",
+        "sep2",
+        "heading_produced",
+        "produced_text",
+        "data_stack",
+        "sep3",
+        "file_section",
+        "note_dryrun"
+      ]
+    },
+    "alert_blocked": {
+      "type": "Alert",
+      "props": {
+        "type": "error",
+        "title": "Compilation blocked",
+        "message": "Foundry toolchain not available. Hook source generated but unverified."
+      }
+    },
+    "error_code": {
+      "type": "Text",
+      "props": {
+        "text": "DEPLOY_HOOK_NO_TOOLCHAIN — nothing was compiled, simulated, or deployed.",
+        "variant": "muted"
+      }
+    },
+    "brief_text": {
+      "type": "Text",
+      "props": {
+        "text": "Brief: template:dynamic chain:base-sepolia — a dynamic-fee pool encoding the CoinMarketCap ETH 24h change the agent just paid for.",
+        "variant": "body"
+      }
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_cause": {
+      "type": "Heading",
+      "props": {
+        "text": "Root cause",
+        "level": "h3"
+      }
+    },
+    "cause_text": {
+      "type": "Text",
+      "props": {
+        "text": "The Stage deploy-uni-hook toolchain step (aeon.yml step 18) reported success, but Foundry never landed — ~/.foundry and ~/hookbuild do not exist and ./hook-deploy.sh was not copied to the repo root. scripts/stage-deploy-uni-hook.sh hit its WARN forge unavailable after install attempt early-exit, so the curl -L https://foundry.paradigm.xyz | bash install failed on the runner. The script is best-effort (exit 0), so the workflow step went green anyway.",
+        "variant": "body"
+      }
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading_produced": {
+      "type": "Heading",
+      "props": {
+        "text": "What was produced",
+        "level": "h3"
+      }
+    },
+    "produced_text": {
+      "type": "Text",
+      "props": {
+        "text": "The hook source, with the purchased data burned in as public constants.",
+        "variant": "body"
+      }
+    },
+    "data_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "data_eth_change",
+        "data_eth_price",
+        "data_pool_fee"
+      ]
+    },
+    "data_eth_change": {
+      "type": "Text",
+      "props": {
+        "text": "ETH_24H_CHANGE_BPS = -20 (from $1,893.76 / -0.20%)",
+        "variant": "body"
+      }
+    },
+    "data_eth_price": {
+      "type": "Text",
+      "props": {
+        "text": "CMC_ETH_PRICE_USD_E8 = 189376000000",
+        "variant": "body"
+      }
+    },
+    "data_pool_fee": {
+      "type": "Text",
+      "props": {
+        "text": "Idle-pool fee: 0.30% → 0.375%",
+        "variant": "body"
+      }
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "file_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "file_label",
+        "file_link"
+      ]
+    },
+    "file_label": {
+      "type": "Text",
+      "props": {
+        "text": "Output file:",
+        "variant": "caption"
+      }
+    },
+    "file_link": {
+      "type": "StoryLink",
+      "props": {
+        "title": "DynamicFeeHook-cmc-eth-20260818.sol",
+        "href": "output/hooks/pending/DynamicFeeHook-cmc-eth-20260818.sol"
+      }
+    },
+    "note_dryrun": {
+      "type": "Alert",
+      "props": {
+        "type": "warning",
+        "title": "Unverified",
+        "message": "This was a dry-run (no arm:), and compile/mine/simulate gates were skipped. The source is unverified. Re-run once staging is fixed."
+      }
+    }
+  }
+}

@@ -2,3 +2,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-18,hearbeat,claude-sonnet-5,3628,12131,1513696,73737
 2026-08-18,finance-district-mcp,claude-sonnet-5,3614,8522,859400,77169
 2026-08-18,finance-district-mcp,claude-sonnet-5,3467,3850,426397,51812
+2026-08-18,deploy-uni-hook,claude-opus-5,4101,20190,1313033,71742

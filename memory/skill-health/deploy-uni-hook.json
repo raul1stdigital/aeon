@@ -1,0 +1,14 @@
+{
+  "skill": "deploy-uni-hook",
+  "last_analyzed": "2026-08-18T05:58:29Z",
+  "quality_score": 2,
+  "assessment": "Ran and produced substantive diagnostic output identifying a systemic toolchain failure, but failed to complete the primary task (no deployment occurred).",
+  "flags": [],
+  "avg_score": 2,
+  "history": [
+    {
+      "date": "2026-08-18",
+      "score": 2
+    }
+  ]
+}
