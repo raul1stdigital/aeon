@@ -1,0 +1,224 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "deploy-uni-hook",
+        "description": "Skipped — idempotency gate"
+      },
+      "children": [
+        "alert-skip",
+        "sep-1",
+        "heading-chain",
+        "text-chain",
+        "sep-2",
+        "heading-task",
+        "text-task",
+        "sep-3",
+        "heading-reason",
+        "text-reason",
+        "text-idempotent",
+        "heading-address",
+        "link-hook",
+        "sep-4",
+        "heading-repeated",
+        "text-repeated",
+        "sep-5",
+        "heading-warning",
+        "text-warning",
+        "sep-6",
+        "heading-recommend",
+        "text-recommend",
+        "sep-7",
+        "text-funds",
+        "sep-8",
+        "heading-prior",
+        "link-basescan"
+      ]
+    },
+    "alert-skip": {
+      "type": "Alert",
+      "props": {
+        "title": "Skipped: Idempotency Gate",
+        "message": "Did not broadcast. An all-but-identical brief was already deployed 24 minutes ago (inside the 1-hour idempotency window).",
+        "type": "warning"
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading-chain": {
+      "type": "Heading",
+      "props": {
+        "text": "Chain Step",
+        "level": "h3"
+      }
+    },
+    "text-chain": {
+      "type": "Text",
+      "props": {
+        "text": "Part of fd-hook-demo chain",
+        "variant": "body"
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading-task": {
+      "type": "Heading",
+      "props": {
+        "text": "Task",
+        "level": "h3"
+      }
+    },
+    "text-task": {
+      "type": "Text",
+      "props": {
+        "text": "Bake CoinMarketCap's ETH 24h-change (+0.018% → 2 bps) into a fresh dynamic-fee showcase pool, armed for Base mainnet.",
+        "variant": "body"
+      }
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading-reason": {
+      "type": "Heading",
+      "props": {
+        "text": "Skip Reason",
+        "level": "h3"
+      }
+    },
+    "text-reason": {
+      "type": "Text",
+      "props": {
+        "text": "memory/state/hook-deploys.json shows an all-but-identical brief already deployed to base/dynamic at 2026-08-18T09:12:41Z. This deployment occurred only 24 minutes before the current run, which is inside the skill's 1-hour idempotency window (safety contract #5).",
+        "variant": "body"
+      }
+    },
+    "text-idempotent": {
+      "type": "Text",
+      "props": {
+        "text": "Per DEPLOY_HOOK_IDEMPOTENT, the arm/broadcast step was stopped before any gas was spent.",
+        "variant": "body"
+      }
+    },
+    "heading-address": {
+      "type": "Heading",
+      "props": {
+        "text": "Deployed Hook Address",
+        "level": "h4"
+      }
+    },
+    "link-hook": {
+      "type": "Link",
+      "props": {
+        "label": "0xF8746df7b130f60386b3941FCE25801B7e3650C0",
+        "href": "https://basescan.org/address/0xF8746df7b130f60386b3941FCE25801B7e3650C0"
+      }
+    },
+    "sep-4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading-repeated": {
+      "type": "Heading",
+      "props": {
+        "text": "Repeated Executions",
+        "level": "h3"
+      }
+    },
+    "text-repeated": {
+      "type": "Text",
+      "props": {
+        "text": "This is the third fd-hook-demo firing today: 07:32, 09:12, and ~09:36 (~40–90 minute cadence).",
+        "variant": "body"
+      }
+    },
+    "sep-5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading-warning": {
+      "type": "Heading",
+      "props": {
+        "text": "Finance-District-MCP Warning",
+        "level": "h3"
+      }
+    },
+    "text-warning": {
+      "type": "Text",
+      "props": {
+        "text": "The immediately-prior chain step blocked a duplicated 0.0004 ETH \"gas float to hook deployer\" transfer (sent twice already today) plus a diversion to a lookalike address, and flagged the repeated-request pattern as address-poisoning-style abuse. The hook deployer address in that warning (0xd9af81c1...c6830d) matches this skill's recorded deployer (0xd9Af81C10FD963e82aa296E095d774DD81C6830d) — so the \"suspicious\" transfer target was actually the real deploy key, but repeated far more often than any single deploy needs funding for.",
+        "variant": "body"
+      }
+    },
+    "sep-6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading-recommend": {
+      "type": "Heading",
+      "props": {
+        "text": "Recommendation",
+        "level": "h3"
+      }
+    },
+    "text-recommend": {
+      "type": "Text",
+      "props": {
+        "text": "Check what's re-triggering fd-hook-demo so frequently before the next window opens.",
+        "variant": "body"
+      }
+    },
+    "sep-7": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "text-funds": {
+      "type": "Text",
+      "props": {
+        "text": "No funds spent this run.",
+        "variant": "lead"
+      }
+    },
+    "sep-8": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "heading-prior": {
+      "type": "Heading",
+      "props": {
+        "text": "Prior Live Hook",
+        "level": "h3"
+      }
+    },
+    "link-basescan": {
+      "type": "Link",
+      "props": {
+        "label": "View on Basescan",
+        "href": "https://basescan.org/address/0xF8746df7b130f60386b3941FCE25801B7e3650C0"
+      }
+    }
+  }
+}
