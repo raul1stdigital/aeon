@@ -38,15 +38,15 @@
     "last_quality_score": 4
   },
   "deploy-uni-hook": {
-    "last_status": "failed",
+    "last_status": "success",
     "last_failed": "2026-08-18T06:16:32Z",
-    "total_runs": 3,
-    "total_successes": 1,
+    "total_runs": 4,
+    "total_successes": 2,
     "total_failures": 2,
-    "consecutive_failures": 1,
-    "success_rate": 0.33,
-    "last_success": "2026-08-18T05:59:09Z",
-    "last_quality_score": 2,
+    "consecutive_failures": 0,
+    "success_rate": 0.5,
+    "last_success": "2026-08-18T06:29:51Z",
+    "last_quality_score": 5,
     "last_error": "claude exited 1: ookbuild --rpc-url https://sepolia.base.org --sender 0xd9Af81C10FD963e82aa296E095d774DD81C6830d 2>&1 | tail -50\",\"timeout\":600000,\"description\":\"Run keyless forge simulation with send"
   }
 }
