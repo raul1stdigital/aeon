@@ -1,0 +1,102 @@
+{
+  "root": "card",
+  "state": {},
+  "elements": {
+    "card": {
+      "type": "Card",
+      "props": {
+        "title": "deploy-uni-hook: live on Base",
+        "description": "Uniswap v4 hook deployed live on Base mainnet"
+      },
+      "children": [
+        "main-content"
+      ]
+    },
+    "main-content": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "intro-text",
+        "separator1",
+        "details-section",
+        "separator2",
+        "external-link"
+      ]
+    },
+    "intro-text": {
+      "type": "Text",
+      "props": {
+        "text": "Dynamic-fee demo pool encoding fresh CoinMarketCap ETH 24h-change data."
+      }
+    },
+    "separator1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "details-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "hook-item",
+        "data-item",
+        "fee-item",
+        "gas-item",
+        "cost-item"
+      ]
+    },
+    "hook-item": {
+      "type": "StoryLink",
+      "props": {
+        "title": "Hook: 0xF8746df7...50C0",
+        "href": "https://basescan.org/address/0xF8746df7b130f60386b3941FCE25801B7e3650C0",
+        "source": "BaseScan"
+      }
+    },
+    "data-item": {
+      "type": "Text",
+      "props": {
+        "text": "Data: ETH +0.104876% 24h → +10 bps, baked into fee logic (0.01 USDC paid via x402)"
+      }
+    },
+    "fee-item": {
+      "type": "Text",
+      "props": {
+        "text": "Fee verified on-chain: first swap emitted feeApplied=4000 = BASE_FEE(3000) + ETH_24H_PREMIUM(1000)"
+      }
+    },
+    "gas-item": {
+      "type": "Text",
+      "props": {
+        "text": "Skipped a redundant 0.0004 ETH gas transfer — deployer already held ~13x the ~0.000059 ETH this deploy needed"
+      }
+    },
+    "cost-item": {
+      "type": "Stat",
+      "props": {
+        "label": "Est. cost",
+        "value": "0.000059 ETH"
+      }
+    },
+    "separator2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "external-link": {
+      "type": "Link",
+      "props": {
+        "label": "View on BaseScan",
+        "href": "https://basescan.org/address/0xF8746df7b130f60386b3941FCE25801B7e3650C0"
+      }
+    }
+  }
+}

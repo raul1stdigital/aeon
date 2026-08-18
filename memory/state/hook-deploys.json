@@ -40,5 +40,48 @@
     "estimatedAmountRequired": "0.000059271535991655 ETH",
     "mainnet": true,
     "status": "DEPLOY_HOOK_OK"
+  },
+  {
+    "timestamp": "2026-08-18T09:12:41Z",
+    "chain": "base",
+    "chainId": 8453,
+    "template": "dynamic",
+    "brief": "arm:template:dynamic chain:base a dynamic-fee demo pool that cleanly encodes the freshly purchased CoinMarketCap ETH 24h-change figure (rounded to bps) into its fee logic, so the deployed hook visibly reflects the data the agent paid for",
+    "hookAddress": "0xF8746df7b130f60386b3941FCE25801B7e3650C0",
+    "flags": "0x10c0",
+    "flagNames": ["afterInitialize", "beforeSwap", "afterSwap"],
+    "poolManager": "0x498581fF718922c3f8e6A244956aF099B2652b2b",
+    "stateView": "0xa3c0c9b65bad0b08107aa264b0f3db444b867a71",
+    "poolId": "0x445ab816135b082312de48b16d48367d4dd4888e4065762d46fb2b58d12966e7",
+    "poolKey": {
+      "currency0": "0x32a9bF0E909ce392c3824c4b39B13c497AA9D773",
+      "currency1": "0xE12c8B2e5D420DfdC7f79004D2762e18f826AA47",
+      "fee": "0x800000 (DYNAMIC_FEE_FLAG)",
+      "tickSpacing": 60,
+      "hooks": "0xF8746df7b130f60386b3941FCE25801B7e3650C0"
+    },
+    "dataEncoded": {
+      "source": "pro-api.coinmarketcap.com/x402/v3/cryptocurrency/quotes/latest?id=1027 (ETH), fetched via finance-district-mcp getX402Content, paid 0.01 USDC x402 on Base",
+      "eth24hChangePct": 0.104876,
+      "eth24hChangeBps": 10,
+      "feeEncoding": "ETH_24H_PREMIUM = |eth24hChangeBps| * 100 fee-units = 1000; MARKET_ADJUSTED_FEE = BASE_FEE(3000) + ETH_24H_PREMIUM(1000) + lastMove[id]*FEE_PER_TICK",
+      "verifiedOnchain": "first swap emitted DynamicFee(id, lastMove=0, feeApplied=0x0fa0=4000) == 3000 + 1000 + 0, confirming the +10bps figure is live in the deployed fee logic"
+    },
+    "deployer": "0xd9Af81C10FD963e82aa296E095d774DD81C6830d",
+    "txHashes": {
+      "mockTokenA": "0xfd1905c58c7aa0394338d91c9970c0f452a0c9feeb6724ab512a409fc65159e7",
+      "mockTokenB": "0x1b5736b4e127dba3da3c628dd8c7dd404d02480b875a279e2450a319ba884d66",
+      "mintA": "0x1aedd818d1c8fb2962d3c7c360cf4925053361b41819f9329a5dfecc5ef121ab",
+      "mintB": "0xf2bbe067ae71de4fc1b9daf0aa2142ca84f1d9d46fb6a37dd3155a68f9634653",
+      "hookDeploy": "0x0fc7cd472c95be1592123825b7cc91301e789d8bda6ab4c3e369c5251baa28b6",
+      "poolInitialize": "0x14ad6c17748cd68097edbf615b8cc80f8159918fded4c8cb100d9cb4f13124ea",
+      "addLiquidity": "0x39543fdabc7820c6b425a6d7851b3fa4d086f90e94155d2fcb7a4652ecc15b17",
+      "swap": "0xff0bdc04cbd8f3ea8d58edfad0cff6cdf0cacc4fcfeace71b6a23bfbfcc4a79d"
+    },
+    "explorer": "https://basescan.org/address/0xF8746df7b130f60386b3941FCE25801B7e3650C0",
+    "estimatedAmountRequired": "0.000058998555036 ETH",
+    "mainnet": true,
+    "status": "DEPLOY_HOOK_OK",
+    "note": "prior finance-district-mcp chain step paused on whether to resend 0.0004 ETH gas float to the deployer; resolved to skip the resend since ~0.00074 ETH already sitting there covered this deploy's ~0.000059 ETH estimate ~12x over (confirmed by hook-deploy.sh preflight balance read: 0.000777604486572448 ETH before broadcast)."
   }
 ]
