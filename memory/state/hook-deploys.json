@@ -1,0 +1,44 @@
+[
+  {
+    "timestamp": "2026-08-18T07:32:46Z",
+    "chain": "base",
+    "chainId": 8453,
+    "template": "dynamic",
+    "brief": "template:dynamic chain:base a dynamic-fee demo pool that encodes the just-purchased CoinMarketCap ETH 24h-change figure (rounded to bps) into its fee logic, so the deployed hook visibly reflects the data the agent paid for",
+    "hookAddress": "0xeCB8c72C40e8ba58C11959e7f0Cd4B657D05d0C0",
+    "flags": "0x10c0",
+    "flagNames": ["afterInitialize", "beforeSwap", "afterSwap"],
+    "poolManager": "0x498581fF718922c3f8e6A244956aF099B2652b2b",
+    "stateView": "0xa3c0c9b65bad0b08107aa264b0f3db444b867a71",
+    "poolId": "0x4b85c6accd84d0c0eb1a36ccb36f0a3012f5eb79e86d9a9671319d70b0b89afc",
+    "poolKey": {
+      "currency0": "0x2f7878b1dAaDFf6EC840f402335682f7157F3d48",
+      "currency1": "0xC5d3804AFef7303bb286a3271B61BddA15cb838F",
+      "fee": "0x800000 (DYNAMIC_FEE_FLAG)",
+      "tickSpacing": 60,
+      "hooks": "0xeCB8c72C40e8ba58C11959e7f0Cd4B657D05d0C0"
+    },
+    "dataEncoded": {
+      "source": "pro-api.coinmarketcap.com/x402/v3/cryptocurrency/quotes/latest?id=1027 (ETH), fetched by finance-district-mcp chain step, paid 0.01 USDC x402 on Base",
+      "eth24hChangePct": -0.18,
+      "eth24hChangeBps": -18,
+      "feeEncoding": "ETH_24H_PREMIUM = |eth24hChangeBps| * 100 fee-units = 1800; MARKET_ADJUSTED_FEE = BASE_FEE(3000) + ETH_24H_PREMIUM(1800) + lastMove[id]*FEE_PER_TICK",
+      "verifiedOnchain": "first swap emitted DynamicFee(id, lastMove=0, feeApplied=0x12c0=4800) == 3000 + 1800 + 0, confirming the -18bps figure is live in the deployed fee logic"
+    },
+    "deployer": "0xd9Af81C10FD963e82aa296E095d774DD81C6830d",
+    "txHashes": {
+      "mockTokenA": "0x0795c843cba3b0ed0e081521fbc3293d33bd6072a0cc203b56a87a62b3b06f57",
+      "mockTokenB": "0xb8135d6ce1b97807c7f007bd2e203d1b93f3ae3ba8e47b5f57b270d933a9af71",
+      "mintA": "0x97b9a269e77fe2124fb2eb96e2ac840a82f57a9cb01b8d3db31d80791e577d56",
+      "mintB": "0x22cdb2b307931554885e8e8252a7e39fd61f34adf132f38d5e7f579b6082d2c9",
+      "hookDeploy": "0xef08d604d74e7072a869ed44570095eeb7a29801a85947e70d55e29d69b894a6",
+      "poolInitialize": "0xb6e76d95de2fb2d6857dbd299de45f6cfa7c57b733c078d8cd6b6b43679279c2",
+      "addLiquidity": "0xa2063d63e9ddceb1259139d25fb7d71206e2f61986c182886b78ff8e7ab1b95a",
+      "swap": "0x2dcaa40ee409f217f8f54cbed0060a58dc654b7ba0bdffe15043503ba3d1ee5a"
+    },
+    "explorer": "https://basescan.org/address/0xeCB8c72C40e8ba58C11959e7f0Cd4B657D05d0C0",
+    "estimatedAmountRequired": "0.000059271535991655 ETH",
+    "mainnet": true,
+    "status": "DEPLOY_HOOK_OK"
+  }
+]

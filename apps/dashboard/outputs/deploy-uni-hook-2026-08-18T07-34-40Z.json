@@ -1,0 +1,273 @@
+{
+  "root": "card-main",
+  "state": {},
+  "elements": {
+    "card-main": {
+      "type": "Card",
+      "props": {
+        "title": "Uniswap v4 Hook Deployed Live on Base",
+        "description": "Dynamic-fee template hook now live on Base mainnet"
+      },
+      "children": [
+        "status-row",
+        "sep-1",
+        "hook-section",
+        "sep-2",
+        "fee-section",
+        "sep-3",
+        "verify-section",
+        "sep-4",
+        "pool-section",
+        "sep-5",
+        "explorer-link"
+      ]
+    },
+    "status-row": {
+      "type": "Stack",
+      "props": {
+        "direction": "horizontal",
+        "gap": "md"
+      },
+      "children": [
+        "badge-live",
+        "badge-chain"
+      ]
+    },
+    "badge-live": {
+      "type": "Badge",
+      "props": {
+        "text": "Live on Base",
+        "variant": "default"
+      }
+    },
+    "badge-chain": {
+      "type": "Badge",
+      "props": {
+        "text": "Base (8453)",
+        "variant": "outline"
+      }
+    },
+    "sep-1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "hook-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "hook-h3",
+        "hook-addr",
+        "hook-template",
+        "hook-link"
+      ]
+    },
+    "hook-h3": {
+      "type": "Heading",
+      "props": {
+        "text": "Hook Deployment",
+        "level": "h3"
+      }
+    },
+    "hook-addr": {
+      "type": "Text",
+      "props": {
+        "text": "Hook: 0xeCB8c72C40e8ba58C11959e7f0Cd4B657D05d0C0",
+        "variant": "body"
+      }
+    },
+    "hook-template": {
+      "type": "Text",
+      "props": {
+        "text": "Dynamic-fee template, flags 0x10c0",
+        "variant": "caption"
+      }
+    },
+    "hook-link": {
+      "type": "Link",
+      "props": {
+        "label": "View on BaseScan",
+        "href": "https://basescan.org/address/0xeCB8c72C40e8ba58C11959e7f0Cd4B657D05d0C0"
+      }
+    },
+    "sep-2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "fee-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "fee-h3",
+        "cmc-text",
+        "change-stat",
+        "premium-text"
+      ]
+    },
+    "fee-h3": {
+      "type": "Heading",
+      "props": {
+        "text": "Fee Structure",
+        "level": "h3"
+      }
+    },
+    "cmc-text": {
+      "type": "Text",
+      "props": {
+        "text": "Encodes CoinMarketCap ETH 24h-change figure purchased via finance-district-mcp for 0.01 USDC (x402 multiplier)",
+        "variant": "body"
+      }
+    },
+    "change-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "ETH 24h Change",
+        "value": "-0.18%",
+        "delta": "-18 bps",
+        "trend": "down"
+      }
+    },
+    "premium-text": {
+      "type": "Text",
+      "props": {
+        "text": "Baked into fee curve: 1800-unit premium (18 bps × 402) on top of 3000-unit base fee",
+        "variant": "body"
+      }
+    },
+    "sep-3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "verify-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "verify-h3",
+        "verify-text",
+        "fee-breakdown"
+      ]
+    },
+    "verify-h3": {
+      "type": "Heading",
+      "props": {
+        "text": "On-Chain Verification",
+        "level": "h3"
+      }
+    },
+    "verify-text": {
+      "type": "Text",
+      "props": {
+        "text": "First swap emitted feeApplied=4800, confirming deployed hook reflects purchased data",
+        "variant": "body"
+      }
+    },
+    "fee-breakdown": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "breakdown-base",
+        "breakdown-premium",
+        "breakdown-move"
+      ]
+    },
+    "breakdown-base": {
+      "type": "Text",
+      "props": {
+        "text": "3000 (base fee)",
+        "variant": "caption"
+      }
+    },
+    "breakdown-premium": {
+      "type": "Text",
+      "props": {
+        "text": "1800 (18 bps × 402 premium)",
+        "variant": "caption"
+      }
+    },
+    "breakdown-move": {
+      "type": "Text",
+      "props": {
+        "text": "0 (no prior move)",
+        "variant": "caption"
+      }
+    },
+    "sep-4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "pool-section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "pool-h3",
+        "pool-text",
+        "deployer-text",
+        "gas-stat"
+      ]
+    },
+    "pool-h3": {
+      "type": "Heading",
+      "props": {
+        "text": "Pool & Deployer",
+        "level": "h3"
+      }
+    },
+    "pool-text": {
+      "type": "Text",
+      "props": {
+        "text": "Pool: 0x4b85c6accd84d0c0eb1a36ccb36f0a3012f5eb79e86d9a9671319d70b0b89afc",
+        "variant": "body"
+      }
+    },
+    "deployer-text": {
+      "type": "Text",
+      "props": {
+        "text": "Deployer: 0xd9Af81C10FD963e82aa296E095d774DD81C6830d",
+        "variant": "body"
+      }
+    },
+    "gas-stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Gas Float Used",
+        "value": "0.0008 ETH",
+        "delta": "vs ~0.0000593 ETH required"
+      }
+    },
+    "sep-5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "explorer-link": {
+      "type": "Link",
+      "props": {
+        "label": "View Hook on BaseScan",
+        "href": "https://basescan.org/address/0xeCB8c72C40e8ba58C11959e7f0Cd4B657D05d0C0"
+      }
+    }
+  }
+}

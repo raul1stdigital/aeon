@@ -5,3 +5,4 @@ date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-18,deploy-uni-hook,claude-opus-5,4101,20190,1313033,71742
 2026-08-18,deploy-uni-hook,claude-sonnet-5,3914,24416,2521263,62321
 2026-08-18,finance-district-mcp,claude-sonnet-5,3475,7618,656934,82675
+2026-08-18,deploy-uni-hook,claude-sonnet-5,4190,26602,3309826,72776
