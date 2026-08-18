@@ -1,0 +1,105 @@
+{
+  "root": "main-card",
+  "state": {},
+  "elements": {
+    "main-card": {
+      "type": "Card",
+      "props": {
+        "title": "deploy-uni-hook",
+        "description": "Simulation failed — unfunded key"
+      },
+      "children": [
+        "alert",
+        "separator",
+        "content-stack"
+      ]
+    },
+    "alert": {
+      "type": "Alert",
+      "props": {
+        "title": "Simulation Failed",
+        "message": "Forge simulation reverted with 'lack of funds' for the fallback (unfunded) simulation key — confirmed on base-sepolia AND unichain-sepolia, so it's a shared-key funding issue, not a chain fluke.",
+        "type": "error"
+      }
+    },
+    "separator": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      }
+    },
+    "content-stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "root-cause-heading",
+        "root-cause-text",
+        "fix-heading",
+        "fix-text",
+        "memory-heading",
+        "memory-text",
+        "status-heading",
+        "status-badge"
+      ]
+    },
+    "root-cause-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Root Cause",
+        "level": "h3"
+      }
+    },
+    "root-cause-text": {
+      "type": "Text",
+      "props": {
+        "text": "No HOOK_DEPLOYER_PRIVATE_KEY set on this instance",
+        "variant": "body"
+      }
+    },
+    "fix-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Suggested Fix",
+        "level": "h3"
+      }
+    },
+    "fix-text": {
+      "type": "Text",
+      "props": {
+        "text": "Use vm.deal in DeployHook.s.sol",
+        "variant": "body"
+      }
+    },
+    "memory-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Action Logged",
+        "level": "h3"
+      }
+    },
+    "memory-text": {
+      "type": "Text",
+      "props": {
+        "text": "Root cause and suggested fix logged to memory for skill-repair review",
+        "variant": "body"
+      }
+    },
+    "status-heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Deployment Status",
+        "level": "h3"
+      }
+    },
+    "status-badge": {
+      "type": "Badge",
+      "props": {
+        "text": "Nothing deployed",
+        "variant": "destructive"
+      }
+    }
+  }
+}
