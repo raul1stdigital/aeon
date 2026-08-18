@@ -182,7 +182,7 @@ chains:
     on_error: fail-fast
     steps:
       - { skill: finance-district-mcp, var: "pay https://pro-api.coinmarketcap.com/x402/v3/cryptocurrency/quotes/latest?id=1027 for the latest ETH market data (price and 24h change), then send 0.0004 ETH on Base to 0xd9Af81C10FD963e82aa296E095d774DD81C6830d as gas float for a contract deploy" }
-      - { skill: deploy-uni-hook, var: "arm: template:dynamic chain:base a dynamic-fee demo pool that encodes the just-purchased CoinMarketCap ETH 24h-change figure (rounded to bps) into its fee logic, so the deployed hook visibly reflects the data the agent paid for", consume: [finance-district-mcp] }
+      - { skill: deploy-uni-hook, var: "arm: template:dynamic chain:base a dynamic-fee demo pool that cleanly encodes the freshly purchased CoinMarketCap ETH 24h-change figure (rounded to bps) into its fee logic, so the deployed hook visibly reflects the data the agent paid for", consume: [finance-district-mcp] }
   # routine:
   #   schedule: "0 7 * * *"
   #   on_error: fail-fast
