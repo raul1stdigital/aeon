@@ -1,2 +1,3 @@
 date,skill,model,input_tokens,output_tokens,cache_read,cache_creation
 2026-08-18,hearbeat,claude-sonnet-5,3628,12131,1513696,73737
+2026-08-18,finance-district-mcp,claude-sonnet-5,3614,8522,859400,77169

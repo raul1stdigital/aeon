@@ -1,0 +1,275 @@
+{
+  "root": "card_main",
+  "state": {},
+  "elements": {
+    "card_main": {
+      "type": "Card",
+      "props": {
+        "title": "Finance District Daily Brief",
+        "description": "2026-08-18"
+      },
+      "children": [
+        "wallet_section",
+        "sep1",
+        "balances_section",
+        "sep2",
+        "stablecoin_stat",
+        "sep3",
+        "flag_section",
+        "sep4",
+        "prices_section",
+        "sep5",
+        "yield_section",
+        "sep6",
+        "action_section"
+      ]
+    },
+    "wallet_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "wallet_heading",
+        "wallet_text"
+      ]
+    },
+    "wallet_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Wallet",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "wallet_text": {
+      "type": "Text",
+      "props": {
+        "text": "raumoe · EVM 0x021e...F479 · Solana EA4Hv...F63YeTp · BTC bc1qwv...pdqd2gvxrkj · Sui 0x8159...8d75de2"
+      },
+      "children": []
+    },
+    "sep1": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "balances_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "balances_heading",
+        "balances_table"
+      ]
+    },
+    "balances_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Balances (via getWalletOverview)",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "balances_table": {
+      "type": "Table",
+      "props": {
+        "columns": [
+          "Network",
+          "Assets"
+        ],
+        "rows": [
+          [
+            "Base",
+            "0.00202 ETH, 10.98 USDC"
+          ],
+          [
+            "BSC",
+            "0.00361 BNB, 49.50 USDC, 0.1145 AAVE"
+          ],
+          [
+            "Ethereum, Arbitrum, Base Sepolia, Solana, Bitcoin, Sui",
+            "All zero"
+          ]
+        ]
+      },
+      "children": []
+    },
+    "sep2": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "stablecoin_stat": {
+      "type": "Stat",
+      "props": {
+        "label": "Stablecoin Total (USDC)",
+        "value": "~60.48"
+      },
+      "children": []
+    },
+    "sep3": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "flag_section": {
+      "type": "Alert",
+      "props": {
+        "title": "Scam Token Alert",
+        "message": "BSC account holds ~13 unsolicited scam-style tokens (SpaceXcoin, RTM, several Chinese-character tokens) — classic airdrop-dust spam, not real value. Not acted on.",
+        "type": "warning"
+      },
+      "children": []
+    },
+    "sep4": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "prices_section": {
+      "type": "Alert",
+      "props": {
+        "title": "Price Data Unavailable",
+        "message": "getTokenPrice returned PRICE_FETCH_FAILED for ETH, USDC, BNB, and AAVE this run — tool-side issue, not a bad symbol. No 24h-move data available.",
+        "type": "info"
+      },
+      "children": []
+    },
+    "sep5": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "yield_section": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "md"
+      },
+      "children": [
+        "yield_heading",
+        "yield_note",
+        "yield_base_stack",
+        "yield_bsc_stack"
+      ]
+    },
+    "yield_heading": {
+      "type": "Heading",
+      "props": {
+        "text": "Yield (Idle Stablecoins, EVM Only)",
+        "level": "h3"
+      },
+      "children": []
+    },
+    "yield_note": {
+      "type": "Text",
+      "props": {
+        "text": "No deposit made — daily brief only, no explicit yield instruction given.",
+        "variant": "muted"
+      },
+      "children": []
+    },
+    "yield_base_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "yield_base_heading",
+        "yield_base_option1",
+        "yield_base_option2"
+      ]
+    },
+    "yield_base_heading": {
+      "type": "Text",
+      "props": {
+        "text": "Base USDC (10.98):",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "yield_base_option1": {
+      "type": "Text",
+      "props": {
+        "text": "fluid-lending — 5.33% APY, $9.17M TVL",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "yield_base_option2": {
+      "type": "Text",
+      "props": {
+        "text": "Aave-v3 — 3.96% APY, $16.6M TVL (more established)",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "yield_bsc_stack": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": "sm"
+      },
+      "children": [
+        "yield_bsc_heading",
+        "yield_bsc_option1",
+        "yield_bsc_option2"
+      ]
+    },
+    "yield_bsc_heading": {
+      "type": "Text",
+      "props": {
+        "text": "BSC USDC (49.50):",
+        "variant": "lead"
+      },
+      "children": []
+    },
+    "yield_bsc_option1": {
+      "type": "Text",
+      "props": {
+        "text": "IXS — 6.63% APY but only $1.8K TVL (too thin to trust)",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "yield_bsc_option2": {
+      "type": "Text",
+      "props": {
+        "text": "Aave-v3 — 4.39% APY, $1.15M TVL (safer pick)",
+        "variant": "body"
+      },
+      "children": []
+    },
+    "sep6": {
+      "type": "Separator",
+      "props": {
+        "orientation": "horizontal"
+      },
+      "children": []
+    },
+    "action_section": {
+      "type": "Alert",
+      "props": {
+        "title": "Action Taken",
+        "message": "None — var was empty. No transfers, swaps, or x402 payments requested or executed.",
+        "type": "info"
+      },
+      "children": []
+    }
+  }
+}
