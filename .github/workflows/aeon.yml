@@ -428,6 +428,13 @@ jobs:
         if: steps.work.outputs.mode != '' && steps.skill.outputs.name == 'vuln-scanner'
         run: bash scripts/stage-vuln-scanner.sh "${{ steps.skill.outputs.name }}"
 
+      - name: Install Foundry (deploy-uni-hook)
+        # Reliable Foundry install (cached action) - the piped curl installer in
+        # stage-deploy-uni-hook.sh gets rate-limited on shared runners (codeload 429)
+        # and fails silently, degrading every deploy run to NO_TOOLCHAIN.
+        if: steps.work.outputs.mode != '' && steps.skill.outputs.name == 'deploy-uni-hook'
+        uses: foundry-rs/foundry-toolchain@v1
+
       - name: Stage deploy-uni-hook toolchain
         # Installs Foundry + a pre-built Uniswap v4 project (v4 libs + templates) for
         # the deploy-uni-hook skill, appends ~/.foundry/bin to the PATH file so
